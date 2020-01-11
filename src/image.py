@@ -2,6 +2,7 @@ from PIL import Image as pil_image
 from PIL import ImageGrab 
 from pixel import Pixel
 
+
 class Image:
     def __init__(self):
         self.get_screenshot()
@@ -14,6 +15,8 @@ class Image:
         return Pixel((x, y), pixels[x, y])
 
     def get_screenshot(self):
-        self.image = ImageGrab.grab(bbox=(200, 650, 800 , 710))
+        self.image = ImageGrab.grab(bbox=(100, 500, 1900, 750))
+        self.image.save("screenshot.png")
+
 
     image = None

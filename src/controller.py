@@ -1,5 +1,7 @@
 from pynput.keyboard import Key
 from pynput.keyboard import Controller as KeyboardController
+
+
 class Controller:
 	def __init__(self):
 		self.keyboard = KeyboardController()
@@ -9,4 +11,7 @@ class Controller:
 	def jump(self):
 		print("Jumping...")
 		self.keyboard.press(Key.space)
-		
+
+	def crouch(self):
+		print("Crouching...")
+		self.keyboard.press(Key.down)
