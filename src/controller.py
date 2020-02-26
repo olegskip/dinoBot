@@ -1,17 +1,15 @@
-from pynput.keyboard import Key
+import config
+import win32gui
+import time
 from pynput.keyboard import Controller as KeyboardController
+from pynput.keyboard import Key
 
 
 class Controller:
 	def __init__(self):
 		self.keyboard = KeyboardController()
 
-	keyboard = None
-
 	def jump(self):
-		print("Jumping...")
-		self.keyboard.press(Key.space)
-
-	def crouch(self):
-		print("Crouching...")
-		self.keyboard.press(Key.down)
+		if win32gui.GetWindowText(win32gui.GetForegroundWindow()) == config.dino_title:
+			self.keyboard.press(Key.space)
+			return True
